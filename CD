@@ -1,0 +1,23 @@
+pipeline{
+    agent { label 'docker' }
+    stages{
+        stage(Deploying to testing-Server){
+            steps{
+
+                rtDownload (
+                    serverId: 'Artifactory1',
+                    spec: '''{
+                          "files": [
+                            {
+                              "pattern": "libs-release-local/spring*",
+                              "target": "/opt/tomcat9/webapps"
+                            }
+                          ]
+                    }''',
+                    buildName: '${JOB_NAME}',
+                    buildNumber: '${BUILD_NUMBER}'
+                )
+            }
+        }
+    }
+}

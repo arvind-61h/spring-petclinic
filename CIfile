@@ -42,7 +42,7 @@ pipeline{
             post{
                 always{
                     rtPublishBuildInfo (
-                        serverId: 'Artifactory-1',
+                        serverId: 'Artifactory1',
 
                         buildName: '${JOB_NAME}',
                         buildNumber: '${BUILD_NUMBER}'
