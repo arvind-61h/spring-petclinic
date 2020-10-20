@@ -18,6 +18,11 @@ pipeline{
                     buildNumber: '${BUILD_NUMBER}'
                 )
             }
+            post{
+                success{
+                    sh 'java -jar spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar'
+                }
+            }
         }
     }
 }
