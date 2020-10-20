@@ -10,7 +10,7 @@ pipeline{
                           "files": [
                             {
                               "pattern": "libs-release-local/*spring*.jar",
-                              "target": "/opt/tomcat9/webapps"
+                              "target": "/opt/tomcat9/webapps/"
                             }
                           ]
                     }''',
