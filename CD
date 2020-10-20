@@ -18,7 +18,7 @@ pipeline{
             }
             post{
                 success{
-                    sh 'cd /opt/tomcat9/webapps/'
+                    sh 'cd /opt/tomcat9/webapps'
                     sh 'java -jar spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar'
                 }
             }
