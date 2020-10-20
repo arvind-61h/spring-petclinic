@@ -17,7 +17,7 @@ pipeline{
             }
             post{
                 always{
-                    archiveArtifacts artifacts: '**/*.war', followSymlinks: false
+                    archiveArtifacts artifacts: '/*.war', followSymlinks: false
                     slackSend channel: '#spring-petclinic',
                               message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} More info at: ${env.BUILD_URL}"
                 }
@@ -30,7 +30,7 @@ pipeline{
                     spec: '''{
                           "files": [
                             {
-                              "pattern": "**/*.war",
+                              "pattern": "/*.war",
                               "target": "libs-release-local/"
                             }
                          ]
