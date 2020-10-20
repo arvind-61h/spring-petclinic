@@ -9,13 +9,11 @@ pipeline{
                     spec: '''{
                           "files": [
                             {
-                              "pattern": "libs-release-local/spring*",
+                              "pattern": "libs-release-local/*spring*.jar",
                               "target": "/opt/tomcat9/webapps"
                             }
                           ]
                     }''',
-                    buildName: '${JOB_NAME}',
-                    buildNumber: '${BUILD_NUMBER}'
                 )
             }
             post{
