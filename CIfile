@@ -52,7 +52,7 @@ pipeline{
         }
         stage('Code Review'){
             steps{
-                withSonarQubeEnv('MySonarServer', envOnly: true){
+                withSonarQubeEnv('MySonarServer'){
                     mvn sonar:sonar
                 }
             }
